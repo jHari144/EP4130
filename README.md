@@ -2,8 +2,8 @@
 
 ## `k-means.py`
 ```
-usage: k-means.py [--help] data K [--max_iter MAX_ITER] [--epsilon EPSILON]
-                  [--output_clusters OUTPUT_CLUSTERS] [--output_means OUTPUT_MEANS] [--verbose] [--benchmark] [--PCA]
+usage: k-means.py [--help] data K [--max_iter MAX_ITER] [--epsilon EPSILON] [--output_clusters OUTPUT_CLUSTERS]
+                  [--output_means OUTPUT_MEANS] [--verbose] [--benchmark] [--PCA]
 
 positional arguments:
   data                  Path to the input csv data file (data should have
