@@ -79,6 +79,22 @@ def plot_data_cluster(data_path, clusters_data, x_label, y_label, dimensions):
         ax.set_title('K-means Clustering of 3D Syntetic Data')
         plt.legend()
         plt.show()
+    elif dimensions == 1:
+        unique_labels = ["Malic acid", "Ash", "Alcalinity of ash", "Magnesium", "Total phenols", "Flavanoids", "Nonflavanoid phenols", "Proanthocyanins", "Color intensity", "Hue", "OD280/OD315 of diluted wines", "Proline"]
+        colors = ['r', 'g', 'b', 'c', 'm', 'y', 'k']
+        # plt.figure(figsize=(, 11))
+        for i, label in enumerate(unique_labels):
+            plt.subplot(4,3,i+1)
+            for j in range(0, len(np.unique(clusters))):
+                data_points = data[clusters[:,0]==j]
+                plt.scatter(data_points[:,i], np.zeros_like(data_points[:,i]), s=5, c=colors[j-1], label=f'{j}')
+            plt.xlabel(label)
+            plt.ylabel('Y')
+            # plt.legend()
+        plt.suptitle('K-means Clustering of 1D Syntetic Data with 3 Clusters')
+        plt.tight_layout()
+        plt.show()
+
 
 if __name__ == "__main__":
     # data_path = "accidents.csv"
